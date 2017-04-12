@@ -12,9 +12,11 @@ Then(/^I should see left side menu$/) do
 end
 
 When(/^I press on conversions$/) do
-  puts "bla bla bla"
+  text("My conversions").click
 end
 
 Then(/^I land on conversions screen$/) do
-  puts "bla bla bla"
+  if text("My conversions").text != "My conversions"
+    fail("Incorrect screen!")
+  end
 end
