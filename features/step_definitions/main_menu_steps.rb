@@ -20,3 +20,22 @@ Then(/^I land on conversions screen$/) do
     fail("Incorrect screen!")
   end
 end
+
+When(/^I press on length$/) do
+  text("Length").click
+end
+
+When(/^convert (\d+) inch to meters$/) do |arg1|
+  text("Foot").click
+  text("Inch").click
+
+  text("Centimeter").click
+  text("Meter").click
+  sleep(2)
+  text("5").click
+  sleep(4)
+end
+
+Then(/^I'm getting x meters$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
