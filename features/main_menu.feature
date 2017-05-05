@@ -11,6 +11,7 @@ Feature: As a user I would like to convert my units
     And I press on conversions
     Then I land on conversions screen
 
+  @wip
   Scenario: I should be able to convert inch to meter
     Given I land on home screen
     When I press on menu button

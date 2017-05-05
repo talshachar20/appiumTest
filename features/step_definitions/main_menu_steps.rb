@@ -25,17 +25,16 @@ When(/^I press on length$/) do
   text("Length").click
 end
 
-When(/^convert (\d+) inch to meters$/) do |arg1|
-  text("Foot").click
+When(/^convert 5 inch to meters$/) do
+  find_elements( id: "select_unit_spinner" )[0].click
   text("Inch").click
-
-  text("Centimeter").click
-  text("Meter").click
-  sleep(2)
-  text("5").click
-  sleep(4)
+  find_elements( id: "select_unit_spinner" )[1].click
+  text("Micron").click
+  text("5").click #not clicking
 end
 
 Then(/^I'm getting x meters$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  if find_element(id: "com.ba.universalconverter:id/source_value_placeholder").text != "5"
+    fail("wasnt entered")
+  end
 end
